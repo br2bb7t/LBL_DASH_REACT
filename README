@@ -1,0 +1,156 @@
+# LBL_DASH_REACT
+
+Frontend application developed in React for the ETQ Printing Submodule Technical Challenge.
+
+## Overview
+
+This application allows users to retrieve and display pre-generated labels (ETQ) using an LPN identifier by consuming the REST API exposed by the FastAPI backend.
+
+The application provides the following features:
+
+* Search labels by LPN.
+* Display ETQ information.
+* Show related order details.
+* Display generated ZPL content.
+* Present business validation messages and error responses.
+
+---
+
+## Technologies Used
+
+* React
+* Vite
+* Axios
+* JavaScript ES6
+* CSS
+
+---
+
+## Prerequisites
+
+* Node.js 18+
+* npm 9+
+
+---
+
+## Environment Configuration
+
+Create a `.env` file in the project root:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+Update the URL according to the environment where the backend API is deployed.
+
+---
+
+## Installation
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## Running the Application
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Production Build
+
+Generate production artifacts:
+
+```bash
+npm run build
+```
+
+The generated files will be located in:
+
+```text
+dist/
+```
+
+---
+
+## Project Structure
+
+```text
+src/
+├── components/
+├── services/
+├── App.jsx
+├── main.jsx
+└── styles/
+```
+
+### Folder Description
+
+* **components**: Reusable UI components.
+* **services**: API communication layer using Axios.
+* **App.jsx**: Main application component.
+* **main.jsx**: React application entry point.
+* **styles**: Global and component-specific styles.
+
+---
+
+## Backend Integration
+
+The application consumes the following endpoint:
+
+```http
+POST /labels/print
+```
+
+Request example:
+
+```json
+{
+  "request": {
+    "lpn": "olpn12345"
+  }
+}
+```
+
+---
+
+## Architecture
+
+The frontend follows a simple component-based architecture and communicates with the backend through REST APIs.
+
+```text
+React Frontend
+       |
+       v
+FastAPI Backend
+       |
+       v
+SQLAlchemy ORM
+       |
+       v
+SQLite Database
+```
+
+This approach promotes separation of concerns, maintainability, and future scalability.
+
+---
+
+## Author
+
+Freddy Alexander Morales
+
+Technical Challenge – ETQ Printing Submodule
